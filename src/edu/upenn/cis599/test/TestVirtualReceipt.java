@@ -27,7 +27,7 @@ public class TestVirtualReceipt extends
 
 	public void testModifyDescription() throws Exception {
 
-		solo.clickOnText("Add a receipt");
+		solo.clickOnText("Add Expense");
 		solo.clickOnButton("No");
 
 		EditText mDescriptionText = (EditText) solo.getView(R.id.description);
@@ -58,7 +58,7 @@ public class TestVirtualReceipt extends
 
 	public void testModifyAmount() throws Exception {
 
-		solo.clickOnText("Add a receipt");
+		solo.clickOnText("Add Expense");
 
 		solo.clickOnButton("No");
 
@@ -86,7 +86,7 @@ public class TestVirtualReceipt extends
 
 	public void testModifyDate() throws Exception {
 
-		solo.clickOnText("Add a receipt");
+		solo.clickOnText("Add Expense");
 
 		solo.clickOnButton("No");
 
@@ -121,7 +121,7 @@ public class TestVirtualReceipt extends
 
 	 public void testModifyCategory() throws Exception{
 		 
-		 solo.clickOnText("Add a receipt");
+		 solo.clickOnText("Add Expense");
 		 solo.clickOnButton("No");
 		 solo.pressSpinnerItem(0, 3);
 		 boolean result1 = solo.isSpinnerTextSelected(0, "Rent");
@@ -134,7 +134,7 @@ public class TestVirtualReceipt extends
 	 
 	 public void testAddReceipt() throws Exception{
 		 
-		 solo.clickOnText("Add a receipt");
+		 solo.clickOnText("Add Expense");
 		 solo.clickOnButton("No");
 		 EditText mDescriptionText = (EditText) solo.getView(R.id.description);
 		 EditText mAmountText = (EditText) solo.getView(R.id.amount);
@@ -153,7 +153,7 @@ public class TestVirtualReceipt extends
 		 solo.clickOnText("Cash");
 		 solo.clickOnButton("Save");
 		 solo.goBackToActivity("VirtualReceiptActivity");
-		 solo.clickOnText("View receipts");
+		 solo.clickOnText("View Entries");
 		 
 		 boolean result1 = solo.waitForText("The tuition is a pain!", 1, 100, false, true);
 		 
@@ -174,7 +174,7 @@ public class TestVirtualReceipt extends
 		 
 		 solo.goBackToActivity("VirtualReceiptActivity");
 		 
-		 solo.clickOnText("View receipts");
+		 solo.clickOnText("View Entries");
 		 
 		 boolean result3 = solo.waitForText("The tuition is a pain!", 1, 100, false, true);
 		 
@@ -184,7 +184,7 @@ public class TestVirtualReceipt extends
 		//create a database with 3 receipts then compare them with the expected charts
 		public void testSpendStat() throws Exception {
 			//add new receipt1
-			 solo.clickOnText("Add a receipt");
+			 solo.clickOnText("Add Expense");
 			 solo.clickOnButton("No");
 			 EditText mDescriptionText1 = (EditText) solo.getView(R.id.description);
 			 EditText mAmountText1 = (EditText) solo.getView(R.id.amount);
@@ -201,7 +201,7 @@ public class TestVirtualReceipt extends
 			 solo.clickOnButton("Save");
 			 
 			//add new receipt2
-			 solo.clickOnText("Add a receipt");
+			 solo.clickOnText("Add Expense");
 			 solo.clickOnButton("No");
 
 			 EditText mDescriptionText2 = (EditText) solo.getView(R.id.description);
@@ -213,7 +213,7 @@ public class TestVirtualReceipt extends
 			 solo.clearEditText(mAmountText2);
 			 solo.enterText(mAmountText2, "200");
 			 
-			 solo.enterText(mDateText1, "12/01/13");
+			 solo.enterText(mDateText2, "12/01/13");
 			 solo.setDatePicker(0, 2014, 10, 15);
 			 solo.clickOnText("Done");
 			 
@@ -224,7 +224,7 @@ public class TestVirtualReceipt extends
 			 solo.clickOnButton("Save");
 			 
 			//add new receipt3
-			 solo.clickOnText("Add a receipt");
+			 solo.clickOnText("Add Expense");
 			 solo.clickOnButton("No");
 			 EditText mDescriptionText3 = (EditText) solo.getView(R.id.description);
 			 EditText mAmountText3 = (EditText) solo.getView(R.id.amount);
@@ -236,7 +236,7 @@ public class TestVirtualReceipt extends
 			 solo.clearEditText(mAmountText3);
 			 solo.enterText(mAmountText3, "300");
 			 
-			 solo.enterText(mDateText1, "12/01/13");
+			 solo.enterText(mDateText3, "12/01/13");
 			 solo.setDatePicker(0, 2014, 10, 16);
 			 solo.clickOnText("Done");
 			 
@@ -277,7 +277,7 @@ public class TestVirtualReceipt extends
 			 solo.clickOnText("Done");
 			 solo.clickOnButton("Save");
 			 solo.goBackToActivity("VirtualReceiptActivity");
-			 solo.clickOnText("View receipts");
+			 solo.clickOnText("View Entries");
 			 boolean result1 = solo.waitForText("New Income", 1, 100, false, true);
 			 assertTrue(result1);
 			 
@@ -288,14 +288,14 @@ public class TestVirtualReceipt extends
 			 solo.clickOnButton("Delete");
 			 solo.clickOnButton("Yes");
 			 solo.goBackToActivity("VirtualReceiptActivity");
-			 solo.clickOnText("View receipts");
+			 solo.clickOnText("View Entries");
 			 boolean result3 = solo.waitForText("New Income", 1, 100, false, true);
 			 assertFalse(result3);
 		 }	
 		
 		public void testAddBudget() throws Exception {
 			 
-			 solo.clickOnText("Add Income");;
+			 solo.clickOnText("Add Income");
 			 EditText mDescriptionText = (EditText) solo.getView(R.id.description);
 			 EditText mAmountText = (EditText) solo.getView(R.id.amount);
 			 EditText mDateText = (EditText) solo.getView(R.id.date);
@@ -313,7 +313,7 @@ public class TestVirtualReceipt extends
 			 solo.pressSpinnerItem(0, 1);
 			 solo.clickOnButton("Save");
 			 solo.goBackToActivity("VirtualReceiptActivity");
-			 solo.clickOnText("View receipts");
+			 solo.clickOnText("View Entries");
 			 boolean result1 = solo.waitForText("New Budget", 1, 100, false, true);
 			 assertTrue(result1);
 			 
@@ -324,7 +324,7 @@ public class TestVirtualReceipt extends
 			 solo.clickOnButton("Delete");
 			 solo.clickOnButton("Yes");
 			 solo.goBackToActivity("VirtualReceiptActivity");
-			 solo.clickOnText("View receipts");
+			 solo.clickOnText("View Entries");
 			 boolean result3 = solo.waitForText("New Budget", 1, 100, false, true);
 			 assertFalse(result3);
 		 }		
@@ -372,7 +372,55 @@ public class TestVirtualReceipt extends
 			 solo.pressSpinnerItem(0, -1);
 			 boolean result2 = solo.isSpinnerTextSelected(0, "Income");
 			 assertTrue(result2);
-		 }		
+		 }
+		 
+		 
+		 public void testAddIncomeToast() throws Exception{
+			 
+			 solo.clickOnText("Add Income");
+			 boolean result = solo.waitForText("With this option", 1, 100, false, true);
+			 assertTrue(result);
+		 }
+		 
+		 public void testAddExpenseToast() throws Exception{
+			 
+			 solo.clickOnText("Add Expense");
+			 solo.clickOnButton("No");
+			 boolean result = solo.waitForText("With this option", 1, 100, false, true);
+			 assertTrue(result);
+		 }
+		 
+		 public void testViewEntriesToast() throws Exception{
+			 
+			 solo.clickOnText("View Entries");
+			 boolean result = solo.waitForText("With this option", 1, 100, false, true);
+			 assertTrue(result);
+		 }
+		 
+		 public void testViewSpendingToast() throws Exception{
+			 
+			 solo.clickOnText("View spending statistics");
+			 boolean result = solo.waitForText("With this option", 1, 100, false, true);
+			 assertTrue(result);
+		 }
+		 
+		 public void testDropboxToast() throws Exception{
+			 
+			 solo.clickOnText("Sync with dropbox");
+			 boolean result = solo.waitForText("With this option", 1, 100, false, true);
+			 assertTrue(result);
+		 }
+		 
+		 public void testSavePDFToast() throws Exception{
+			 
+			 solo.clickOnText("View Entries");
+			 solo.sleep(3000);
+			 solo.clickOnButton("Export Receipts to PDF");
+			 solo.sleep(2500);
+			 boolean result = solo.waitForText("Saved PDF", 1, 100, false, true);
+			 assertTrue(result);
+		 }
+		 
 	@Override
 	public void setUp() throws Exception {
 		solo = new Solo(getInstrumentation(), getActivity());
